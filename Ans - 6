@@ -1,0 +1,48 @@
+const http = require('http');
+
+// Sample product data
+const menProducts = [
+  { id: 1, name: 'Men Product 1', category: 'Men' },
+  { id: 2, name: 'Men Product 2', category: 'Men' },
+  // Add more products...
+];
+
+const womenProducts = [
+  { id: 1, name: 'Women Product 1', category: 'Women' },
+  { id: 2, name: 'Women Product 2', category: 'Women' },
+  // Add more products...
+];
+
+// Create the server
+const server = http.createServer((req, res) => {
+  // Set the content type to JSON
+  res.setHeader('Content-Type', 'application/json');
+
+  // Route handling
+  if (req.url === '/') {
+    res.statusCode = 200;
+    res.end(JSON.stringify({ message: 'Welcome to Men & Women Dummy Data' }));
+  } else if (req.url === '/men') {
+    res.statusCode = 200;
+    res.end(JSON.stringify(menProducts));
+  } else if (req.url === '/women') {
+    res.statusCode = 200;
+    res.end(JSON.stringify(womenProducts));
+  } else {
+    res.statusCode = 404;
+    res.end(JSON.stringify({ message: 'Page not found' }));
+  }
+});
+
+// Start the server
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+This code sets up a server that listens on port 3000. When a request is made to the specified endpoints (/, /men, /women, /other), it responds with the appropriate JSON data or an error message.
+
+You can modify the menProducts and womenProducts arrays with your desired product data. Each product object should contain the necessary properties such as id, name, and category. Feel free to add more products to the arrays as needed.
+
+Please note that this is a basic example using the http module. In a real-world scenario, you might consider using a framework like Express.js to handle routing and other advanced features.
