@@ -1,0 +1,17 @@
+REST (Representational State Transfer) is an architectural style for designing networked applications. RESTful APIs (Application Programming Interfaces) are a way to implement this architectural style for web services. A REST API allows different software applications to communicate and interact with each other over the internet using the principles of REST.
+
+Here are the key characteristics of a REST API:
+
+Stateless: REST APIs are stateless, meaning that each request from a client to a server contains all the necessary information to understand and process the request. The server does not maintain any client-specific state between requests.
+
+Resources: REST APIs expose resources that represent entities or objects in the system. Resources are identified by unique URLs (Uniform Resource Locators), also known as endpoints. Clients can perform operations on these resources using standard HTTP methods like GET, POST, PUT, DELETE, etc.
+
+Uniform Interface: REST APIs follow a uniform interface, which means they use standard HTTP methods and status codes for communication. HTTP methods like GET (retrieve a resource), POST (create a new resource), PUT (update a resource), and DELETE (remove a resource) are commonly used.
+
+Representation: Resources in a REST API can have multiple representations such as JSON (JavaScript Object Notation), XML (eXtensible Markup Language), or others. Clients and servers negotiate the representation format using the HTTP Accept and Content-Type headers.
+
+Stateless Interactions: Each request to a REST API is independent and self-contained. The server does not store any information about the client's previous requests. This simplifies the scalability and reliability of the API.
+
+Hypermedia as the Engine of Application State (HATEOAS): HATEOAS is an important concept in REST APIs. It means that the API response includes links to related resources or actions that clients can perform. Clients can discover and navigate the API's capabilities dynamically by following these links.
+
+REST APIs are widely used because they provide a simple and scalable way to expose functionality and data over the internet. They are platform-independent, meaning that clients and servers can be built using different programming languages or technologies as long as they adhere to the principles of REST. REST APIs are commonly used in web and mobile applications to retrieve data, perform CRUD (Create, Read, Update, Delete) operations, and interact with various services and systems over HTTP.
