@@ -1,0 +1,19 @@
+In Node.js, middlewares are a crucial concept used in web application development. They are functions or code snippets that are executed in a sequential manner during the processing of an HTTP request. Middlewares sit between the incoming request and the final route handler, allowing you to add additional functionality, modify the request or response objects, and perform various tasks.
+
+Here's how middlewares work in Node.js:
+
+Middleware functions are typically implemented using the Express.js framework, which is a popular web application framework for Node.js. Express.js provides a clean and intuitive way to define middlewares.
+
+Middleware functions can be registered to specific routes or applied globally to the entire application. Global middlewares are executed for every incoming request, whereas route-specific middlewares are executed only for requests that match a specific route.
+
+A middleware function takes three parameters: request, response, and next. Inside the middleware function, you can perform tasks such as logging, authentication, input validation, error handling, or any other custom functionality.
+
+After performing the necessary tasks, a middleware function can either respond to the request directly or call the next function to pass control to the next middleware in the chain.
+
+Middleware functions are executed in the order they are defined. You can use the app.use() method in Express.js to register middleware globally, and router.use() to register middleware for specific routes. The order of middleware registration determines the execution order.
+
+Middleware functions can also be stacked together, creating a chain of multiple middleware functions. This allows you to modularize and reuse common functionality across different routes or applications.
+
+If a middleware function calls the next function with an error parameter, Express.js will skip the remaining middlewares and directly call the error handling middleware.
+
+By using middlewares, you can enhance the functionality of your Node.js applications, improve code reusability, and keep your routes clean and focused on their core tasks. Middlewares provide a flexible way to handle common tasks and allow for better separation of concerns in your application's codebase.
