@@ -1,0 +1,45 @@
+const express = require('express');
+
+// Create an Express app
+const app = express();
+
+// Initialize the counter
+let counter = 0;
+
+// Endpoint to get the current counter value
+app.get('/', (req, res) => {
+  res.json({ counter });
+});
+
+// Endpoint to increment the counter
+app.post('/increment', (req, res) => {
+  counter++;
+  res.json({ counter });
+});
+
+// Endpoint to decrement the counter
+app.post('/decrement', (req, res) => {
+  counter--;
+  res.json({ counter });
+});
+
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+In this code, we're using Express to create an application. We have defined three endpoints:
+
+The '/' endpoint responds with the current counter value as JSON.
+
+The /increment endpoint increments the counter by 1 when a POST request is made to it. It then responds with the latest counter value as JSON.
+
+The /decrement endpoint decrements the counter by 1 when a POST request is made to it. It also responds with the updated counter value as JSON.
+
+The counter variable keeps track of the current counter value and is updated accordingly.
+
+You can send HTTP requests to the specified endpoints (/, /increment, /decrement) to interact with the counter. The responses will contain the updated counter value.
+
+Remember to install the Express module by running npm install express before running this code.
